@@ -2,8 +2,8 @@
 #include<stdlib.h>
 #include<time.h>
 
-#define maxvetP 100 //quantidade max de elementos do vetor pequeno
-#define maxvetM 1000 //quantidade max de elementos do vetor medio
+#define maxvetP 1000 //quantidade max de elementos do vetor pequeno
+#define maxvetM 10000 //quantidade max de elementos do vetor medio
 #define maxvetG 50000 //quantidade max de elementos do vetor grande
 #define billion 1000000000
 
@@ -32,10 +32,10 @@ void alocaVetor(int *vetor)
 
     //fpVetor = fopen("decrescenteP.dat", "r");
     //fpVetor = fopen("decrescenteM.dat", "r");
-    //fpVetor = fopen("decrescenteG.dat", "r");   
+    fpVetor = fopen("decrescenteG.dat", "r");   
 
     //fpVetor = fopen("randP.dat", "r");
-    fpVetor = fopen("randM.dat", "r");
+    //fpVetor = fopen("randM.dat", "r");
     //fpVetor = fopen("randG.dat", "r");
     
     int i=0;
@@ -83,8 +83,8 @@ void quickSort(int *vetor, int esq, int dir)
 int main()
 {
     //int *vetor = (int*)malloc(maxvetP*sizeof(int));
-    int *vetor = (int*)malloc(maxvetM*sizeof(int));
-    //int *vetor = (int*)malloc(maxvetG*sizeof(int));
+    //int *vetor = (int*)malloc(maxvetM*sizeof(int));
+    int *vetor = (int*)malloc(maxvetG*sizeof(int));
 
     alocaVetor(vetor);
 
@@ -94,10 +94,6 @@ int main()
     clock_gettime(CLOCK_REALTIME, &final);
     tempo = calculaTempo(inicio, final);
     printf("\nTempo ordenacao: %lf", tempo);
-	
-	FILE *arquivo = fopen("tempoquick.dat", "a");
-	fprintf(arquivo, "tempo: %lf\n", tempo);
-	fclose(arquivo);
 	
     free(vetor);
     return 0;

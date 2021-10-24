@@ -2,14 +2,14 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define maxvetP 100 //quantidade max de elementos do vetor pequeno
-#define maxvetM 1000 //quantidade max de elementos do vetor medio
+#define maxvetP 1000 //quantidade max de elementos do vetor pequeno
+#define maxvetM 10000 //quantidade max de elementos do vetor medio
 #define maxvetG 50000 //quantidade max de elementos do vetor grande
 #define billion 1000000000
 
 //definicoes para os buckets
-#define tamBucket 6 //numero de baldes
-#define capacidade 10 //capacidade de cada balde
+#define tamBucket 500 //numero de baldes
+#define capacidade 100 //capacidade de cada balde
 
 int tamVetor;
 
@@ -32,7 +32,7 @@ void alocaVetor(int *vetor)
     FILE *fpVetor;
     // fpVetor = fopen("crescenteP.dat", "r");
     // fpVetor = fopen("crescenteM.dat", "r");
-    fpVetor = fopen("crescenteG.dat", "r");
+    // fpVetor = fopen("crescenteG.dat", "r");
 
     // fpVetor = fopen("decrescenteP.dat", "r");
     // fpVetor = fopen("decrescenteM.dat", "r");
@@ -40,7 +40,7 @@ void alocaVetor(int *vetor)
 
     // fpVetor = fopen("randP.dat", "r");
     // fpVetor = fopen("randM.dat", "r");
-    // fpVetor = fopen("randG.dat", "r");
+    fpVetor = fopen("randG.dat", "r");
 
     int i = 0;
     do
@@ -141,9 +141,9 @@ void bucketSort(int *vetor)
 
 int main()
 {
-    int *vetor = (int*)malloc(maxvetP*sizeof(int));
+    // int *vetor = (int*)malloc(maxvetP*sizeof(int));
     // int *vetor = (int*)malloc(maxvetM*sizeof(int));
-    // int *vetor = (int *)malloc(maxvetG * sizeof(int));
+    int *vetor = (int *)malloc(maxvetG * sizeof(int));
 
     alocaVetor(vetor);
 

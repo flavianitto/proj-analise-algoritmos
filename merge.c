@@ -2,8 +2,8 @@
 #include<stdlib.h>
 #include<time.h>
 
-#define maxvetP 100 //quantidade max de elementos do vetor pequeno
-#define maxvetM 1000 //quantidade max de elementos do vetor medio
+#define maxvetP 1000 //quantidade max de elementos do vetor pequeno
+#define maxvetM 10000 //quantidade max de elementos do vetor medio
 #define maxvetG 50000 //quantidade max de elementos do vetor grande
 #define billion 1000000000
 
@@ -26,7 +26,7 @@ double calculaTempo(struct timespec inicio, struct timespec final)
 void alocaVetor(int *vetor)
 {
     FILE *fpVetor;
-    fpVetor = fopen("crescenteP.dat", "r");
+    //fpVetor = fopen("crescenteP.dat", "r");
     //fpVetor = fopen("crescenteM.dat", "r");
     //fpVetor = fopen("crescenteG.dat", "r");
 
@@ -36,7 +36,7 @@ void alocaVetor(int *vetor)
 
     //fpVetor = fopen("randP.dat", "r");
     //fpVetor = fopen("randM.dat", "r");
-    //fpVetor = fopen("randG.dat", "r");
+    fpVetor = fopen("randG.dat", "r");
     
     int i=0;
     do {
@@ -82,9 +82,9 @@ void mergeSort(int *vetor, int p, int r)
 
 int main()
 {
-    int *vetor = (int*)malloc(maxvetP*sizeof(int));
+    //int *vetor = (int*)malloc(maxvetP*sizeof(int));
     //int *vetor = (int*)malloc(maxvetM*sizeof(int));
-    //int *vetor = (int*)malloc(maxvetG*sizeof(int));
+    int *vetor = (int*)malloc(maxvetG*sizeof(int));
 
     alocaVetor(vetor);
 

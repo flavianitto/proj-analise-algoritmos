@@ -2,8 +2,8 @@
 #include<stdlib.h>
 #include<time.h>
 
-#define maxvetP 100 //quantidade max de elementos do vetor pequeno
-#define maxvetM 1000 //quantidade max de elementos do vetor medio
+#define maxvetP 1000 //quantidade max de elementos do vetor pequeno
+#define maxvetM 10000 //quantidade max de elementos do vetor medio
 #define maxvetG 50000 //quantidade max de elementos do vetor grande
 #define billion 1000000000
 
@@ -27,16 +27,16 @@ void alocaVetor(int *vetor)
 {
     FILE *fpVetor;
     //fpVetor = fopen("crescenteP.dat", "r");
-    //fpVetor = fopen("crescenteM.dat", "r");
-    fpVetor = fopen("crescenteG.dat", "r");
+	//fpVetor = fopen("crescenteM.dat", "r");
+    //fpVetor = fopen("crescenteG.dat", "r");
 
     //fpVetor = fopen("decrescenteP.dat", "r");
     //fpVetor = fopen("decrescenteM.dat", "r");
     //fpVetor = fopen("decrescenteG.dat", "r");   
 
-    //fpVetor = fopen("randP.dat", "r");
+	//fpVetor = fopen("randP.dat", "r");
     //fpVetor = fopen("randM.dat", "r");
-    //fpVetor = fopen("randG.dat", "r");
+    fpVetor = fopen("randG.dat", "r");
     
     int i=0;
     do {
